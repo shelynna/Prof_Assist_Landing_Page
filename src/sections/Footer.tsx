@@ -1,34 +1,58 @@
+
 import React from 'react';
 import { Twitter, Linkedin, GitHub } from 'react-feather';
+import {ProfAssistLogo} from '../../src/assets'
+
 
 const SOCIALS = [
   {Icon: Twitter, label: 'Twitter', href: '#'},
   {Icon: Linkedin, label: 'LinkedIn', href: '#'},
-  {Icon: GitHub, label: 'GitHub', href: '#'}
-];
-
-const FOOTER_LINKS = [
-  { title: 'Product', links: ['Features', 'Pricing', 'Changelog', 'Roadmap'] },
-  { title: 'Resources', links: ['Blog', 'Guides', 'Help Center', 'Academic Tips'] },
-  { title: 'Company', links: ['About', 'Careers', 'Partners', 'Contact'] }
+  // {Icon: GitHub, label: 'GitHub', href: '#'}
 ];
 
 export const Footer: React.FC = () => (
-  <footer className="border-t border-gray-200 bg-white">
+  <footer className="border-t border-border-main bg-surface/50">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <div className="grid gap-12 md:grid-cols-4">
-        <div>
-          <div className="flex items-center gap-2 mb-4"><div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-600 text-white flex items-center justify-center font-bold text-xs">PA</div><span className="font-semibold">ProfAssist</span></div>
-          <p className="text-sm text-gray-600 leading-relaxed">Helping applicants cultivate authentic academic collaborations through intelligent, ethical automation.</p>
-          <div className="flex gap-3 mt-5">
-            {SOCIALS.map(s => <a key={s.label} href={s.href} aria-label={s.label} className="h-9 w-9 flex items-center justify-center rounded-lg bg-gray-100 border border-gray-200 text-gray-500 hover:text-cyan-600 hover:border-cyan-400 transition"><s.Icon className="w-5 h-5" /></a>)}
+      <div className="grid gap-12 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <a href="/" className="inline-block mb-4" aria-label="ProfAssist Home">
+            <ProfAssistLogo variant='classic'/>
+          </a>
+          <p className="text-sm text-text-dim leading-relaxed max-w-sm">Your professional assistant to automate, analyze, and accelerate work.</p>
+        </div>
+        <div className="grid gap-8 sm:grid-cols-3 lg:col-span-7 lg:col-start-6">
+          <div>
+            <h3 className="font-semibold mb-4 text-sm tracking-wide text-text-main">Product</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#features" className="text-text-dim hover:text-primary transition">Features</a></li>
+              <li><a href="#pricing" className="text-text-dim hover:text-primary transition">Pricing</a></li>
+              <li><a href="#faq" className="text-text-dim hover:text-primary transition">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-4 text-sm tracking-wide text-text-main">Company</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="text-text-dim hover:text-primary transition">About Us</a></li>
+              <li><a href="#contact" className="text-text-dim hover:text-primary transition">Contact</a></li>
+              <li><a href="#" className="text-text-dim hover:text-primary transition">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-4 text-sm tracking-wide text-text-main">Stay Updated</h3>
+            <form className="flex flex-col sm:flex-row gap-2" onSubmit={(e) => e.preventDefault()}>
+              <label htmlFor="footer-email" className="sr-only">Email address</label>
+              <input id="footer-email" type="email" placeholder="your@email.com" required className="flex-grow min-w-0 rounded-md border-border-main bg-surface px-3 py-2 text-sm text-text-main placeholder-text-dim/50 focus:border-primary focus:ring-primary" />
+              <button type="submit" className="rounded-md bg-primary text-white px-4 text-sm font-semibold hover:bg-primary-accent transition-colors">Subscribe</button>
+            </form>
           </div>
         </div>
-        <div className="grid gap-8 sm:grid-cols-3 md:col-span-3">
-          {FOOTER_LINKS.map(col => (<div key={col.title}><h3 className="font-semibold mb-4 text-sm tracking-wide">{col.title}</h3><ul className="space-y-2 text-sm">{col.links.map(l => <li key={l}><a href="#" className="text-gray-600 hover:text-cyan-600 transition">{l}</a></li>)}</ul></div>))}
+      </div>
+      <div className="mt-14 pt-8 border-t border-border-main flex flex-col items-center sm:flex-row gap-6 sm:items-center sm:justify-between">
+        <p className="text-xs text-text-dim">© {new Date().getFullYear()} ProfAssist. All rights reserved.</p>
+        <div className="flex items-center gap-4">
+           {SOCIALS.map(s => <a key={s.label} href={s.href} aria-label={s.label} className="text-text-dim hover:text-primary transition"><s.Icon className="w-5 h-5" /></a>)}
         </div>
       </div>
-      <div className="mt-14 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-6 md:items-center md:justify-between"><p className="text-xs text-gray-500">© {new Date().getFullYear()} ProfAssist. All rights reserved.</p><div className="flex flex-wrap gap-6 text-xs"><a href="#" className="text-gray-500 hover:text-cyan-600">Privacy</a><a href="#" className="text-gray-500 hover:text-cyan-600">Terms</a></div></div>
     </div>
   </footer>
 );

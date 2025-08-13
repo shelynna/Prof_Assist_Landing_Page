@@ -1,25 +1,29 @@
 import type { Feature, Testimonial, PricingPlan } from '../types';
+import { Zap, Target, BarChart2, Cpu } from 'react-feather';
 
 export const FEATURES: Feature[] = [
   {
+    icon: Zap,
     title: 'AI-Powered Email Crafting',
-    description: "Generate personalized outreach that professors actually respond to. We parse publication abstracts, lab pages, and your profile for a tailored message.",
-    image: 'https://picsum.photos/seed/email/800/500',
-    highlights: ['Research-specific talking points', 'Academic tone optimization', 'Automated follow-up sequences', 'Response likelihood scoring']
+    body: 'Generate personalized outreach that professors actually respond to. We parse publication abstracts, lab pages, and your profile for a tailored message.',
   },
   {
+    icon: Target,
     title: 'Application Strategy Builder',
-    description: 'Convert raw matches into a prioritized action plan. See impact vs. competitiveness, schedule outreach, and track progression status.',
-    image: 'https://picsum.photos/seed/strategy/800/500',
-    highlights: ['Priority & alignment scoring', 'Timeline milestone generator', 'Interview prep focus points', 'Strength & gap analysis']
+    body: 'Convert raw matches into a prioritized action plan. See impact vs. competitiveness, schedule outreach, and track progression status.',
   },
   {
+    icon: BarChart2,
     title: 'Research Alignment Analyzer',
-    description: 'Move beyond keyword overlap. We evaluate semantic trajectories, methodology overlaps, and emerging synergy potential.',
-    image: 'https://picsum.photos/seed/alignment/800/500',
-    highlights: ['Semantic similarity matrix', 'Trajectory compatibility', 'Funding opportunity hints', 'Lab culture indicators']
-  }
+    body: 'Move beyond keyword overlap. We evaluate semantic trajectories, methodology overlaps, and emerging synergy potential.',
+  },
+   {
+    icon: Cpu,
+    title: 'AI Suggestions',
+    body: 'Context-aware recommendations to streamline decision making.',
+  },
 ];
+
 
 export const TESTIMONIALS: Testimonial[] = [
   { name: 'Sarah K.', title: 'Biology PhD Candidate', university: 'MIT', quote: "The alignment insights gave me precise angles for outreach. I secured two interviews within a week.", image: 'https://picsum.photos/seed/person1/96/96' },
@@ -28,10 +32,57 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const PRICING_PLANS: PricingPlan[] = [
-  { name: 'Free', monthly: 0, annual: 0, description: 'Get started with essential tools', features: ['Import up to 5 matches', 'Basic email scaffolds', '7-day outreach tracking', 'Community support'] },
-  { name: 'Pro', monthly: 19, annual: 190, description: 'Advanced toolkit for serious applicants', highlighted: true, badge: 'Most Popular', features: ['Unlimited match imports', 'AI email & follow-up generation', '4-week conversation analytics', 'Priority support', 'Alignment analyzer', 'Strategy timeline builder'] },
-  { name: 'Premium', monthly: 39, annual: 390, description: 'Full strategic & editorial suite', features: ['Everything in Pro', 'Interview readiness module', 'Custom research statement drafts', 'Advisor-style feedback summaries', 'Advanced funding opportunity hints', 'Dedicated success liaison'] }
+  {
+    id: 'free',
+    name: 'Free',
+    monthly: 0,
+    yearly: 0,
+    tagline: 'Get started with essential tools',
+    features: [
+      'Import up to 5 matches',
+      'Basic email scaffolds',
+      '7-day outreach tracking',
+      'Community support',
+    ],
+    cta: 'Get Started',
+    highlighted: false,
+  },
+  {
+    id: 'pro',
+    name: 'Pro',
+    monthly: 5,
+    yearly: 50,
+    tagline: 'Advanced toolkit for serious applicants',
+    features: [
+      'Unlimited match imports',
+      'AI email & follow-up generation',
+      '4-week conversation analytics',
+      'Priority support',
+      'Alignment analyzer',
+      'Strategy timeline builder',
+    ],
+    cta: 'Choose Pro',
+    highlighted: true,
+  },
+  {
+    id: 'premium',
+    name: 'Premium',
+    monthly: 15,
+    yearly: 150,
+    tagline: 'Full strategic & editorial suite',
+    features: [
+      'Everything in Pro',
+      'Interview readiness module',
+      'Custom research statement drafts',
+      'Advisor-style feedback summaries',
+      'Advanced funding opportunity hints',
+      'Dedicated success liaison',
+    ],
+    cta: 'Choose Premium',
+    highlighted: false,
+  },
 ];
+
 
 export const FAQS = [
   { q: 'How does Prof Assist connect to my other tools?', a: 'One-click import uses secure tokens to sync your saved or shortlisted professors, preserving filters and metadata.' },

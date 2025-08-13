@@ -1,8 +1,9 @@
+import type { ElementType } from 'react';
+
 export interface Feature {
+  icon: ElementType;
   title: string;
-  description: string;
-  image: string;
-  highlights: string[];
+  body: string;
 }
 
 export interface Testimonial {
@@ -14,11 +15,12 @@ export interface Testimonial {
 }
 
 export interface PricingPlan {
+  id: string;
   name: string;
   monthly: number;
-  annual: number;
-  description: string;
+  yearly: number;
+  tagline: string;
   features: string[];
-  highlighted?: boolean;
-  badge?: string;
+  cta: string;
+  highlighted: boolean;
 }

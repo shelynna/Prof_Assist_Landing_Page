@@ -3,16 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProfAssist | Turn Discoveries into Opportunities</title>
+    <title>ProfAssist | Elevate Your Professional Workflow</title>
+    <meta name="description" content="Automate routine tasks, stay organized, and focus on impact—all in one intelligent assistant built for modern professionals.">
+    <meta name="keywords" content="professional assistant, productivity, workflow automation, task management, AI assistant, ProfAssist, organization, modern professionals, automate tasks, time management">
+    <meta name="author" content="ProfAssist Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://profassist.com/">
+    <link rel="icon" type="image/svg+xml" href="/src/assets/logo-icon.svg">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://profassist.com/">
+    <meta property="og:title" content="ProfAssist | Elevate Your Professional Workflow">
+    <meta property="og:description" content="Automate routine tasks, stay organized, and focus on impact—all in one intelligent assistant built for modern professionals.">
+    <meta property="og:image" content="/src/assets/logo-light.svg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://profassist.com/">
+    <meta property="twitter:title" content="ProfAssist | Elevate Your Professional Workflow">
+    <meta property="twitter:description" content="Automate routine tasks, stay organized, and focus on impact—all in one intelligent assistant built for modern professionals.">
+    <meta property="twitter:image" content="/src/assets/logo-light.svg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       html {
         scroll-behavior: smooth;
       }
+      body {
+        background-color: #f8fafc;
+        color: #1e293b;
+      }
+      .gradient-text {
+        background-image: linear-gradient(90deg, #06b6d4, #14b8a6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s cubic-bezier(.4,.2,.2,1), transform 0.6s cubic-bezier(.4,.2,.2,1);
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in-section, .fade-in-section.is-visible {
+          transition: none;
+          transform: none;
+          opacity: 1;
+        }
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script type="importmap">
 {
   "imports": {
@@ -23,11 +68,69 @@
   }
 }
 </script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'brand-bg': '#f8fafc',
+          surface: '#ffffff',
+          'surface-alt': '#f1f5f9',
+          primary: {
+            DEFAULT: '#06b6d4', // cyan-500
+            accent: '#22d3ee', // cyan-400
+          },
+          teal: {
+            500: '#14b8a6',
+          },
+          cyan: {
+             100: '#cffafe'
+          },
+          'text-main': '#1e293b',
+          'text-dim': '#64748b',
+          'border-main': '#e2e8f0',
+        },
+        fontFamily: {
+          sans: ['Poppins', 'sans-serif'],
+        },
+        boxShadow: {
+          'primary': '0 4px 14px -2px rgba(6, 182, 212, 0.3)',
+          'primary-lg': '0 10px 28px -4px rgba(6, 182, 212, 0.35)',
+        },
+        borderRadius: {
+          'xl': '1rem',
+          '2xl': '1.5rem',
+          '3xl': '1.75rem',
+          '4xl': '2rem',
+        }
+      }
+    }
+  }
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"How does Prof Assist connect to my other tools?",
+      "acceptedAnswer":{"@type":"Answer","text":"One-click import uses secure tokens to sync your saved or shortlisted professors, preserving filters and metadata."}
+    },
+    {
+      "@type":"Question",
+      "name":"Do I need AI knowledge to use it?",
+      "acceptedAnswer":{"@type":"Answer","text":"Not at all. Prompts are auto-generated based on your academic profile and professor data."}
+    }
+  ]
+}
+</script>
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
