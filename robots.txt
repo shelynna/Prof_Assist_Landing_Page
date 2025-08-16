@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow potential future private paths (uncomment if needed)
+# Disallow: /dashboard/
+# Disallow: /api/
+
+Sitemap: https://www.profassist.org/sitemap.xml

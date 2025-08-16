@@ -1,8 +1,7 @@
 
 import React from 'react';
-import { Twitter, Linkedin, GitHub } from 'react-feather';
-import {ProfAssistLogo} from '../../src/assets'
-
+import { Twitter, Linkedin} from 'react-feather';
+import logoDark from '../assets/logo-dark.svg';
 
 const SOCIALS = [
   {Icon: Twitter, label: 'Twitter', href: '#'},
@@ -16,7 +15,8 @@ export const Footer: React.FC = () => (
       <div className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <a href="/" className="inline-block mb-4" aria-label="ProfAssist Home">
-            <ProfAssistLogo variant='classic'/>
+            {/* Logo image for brand */}
+            <img src={logoDark} onError={(e)=>{(e.currentTarget as HTMLImageElement).src='/logo-dark.svg';}} alt="ProfAssist Logo" className="h-8 w-auto" />
           </a>
           <p className="text-sm text-text-dim leading-relaxed max-w-sm">Your professional assistant to automate, analyze, and accelerate work.</p>
         </div>

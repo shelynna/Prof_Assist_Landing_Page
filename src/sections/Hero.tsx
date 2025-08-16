@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { ArrowRight } from 'react-feather';
 import { DashboardPreview } from '../components/DashboardPreview';
@@ -19,7 +20,7 @@ export const Hero: React.FC = () => (
             Automate routine tasks, stay organized, and focus on impact—all in one intelligent assistant built for modern professionals.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#pricing" className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-teal-500 px-7 py-3.5 text-white font-semibold shadow-primary hover:shadow-primary-lg transition-all duration-300 transform hover:-translate-y-px">
+            <a href="https://dashboard.profassist.org/signup" className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-teal-500 px-7 py-3.5 text-white font-semibold shadow-primary hover:shadow-primary-lg transition-all duration-300 transform hover:-translate-y-px">
               Get Started <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a href="#features" className="inline-flex items-center justify-center gap-2 rounded-full border border-border-main px-7 py-3.5 font-semibold bg-transparent hover:bg-surface-alt transition-colors">

@@ -5,6 +5,7 @@ import { Header } from './src/sections/Header';
 import { Hero } from './src/sections/Hero';
 import { Features } from './src/sections/Features';
 import { HowItWorks } from './src/sections/HowItWorks';
+import { Workflow } from './src/sections/Workflow';
 import { Testimonials } from './src/sections/Testimonials';
 import { Pricing } from './src/sections/Pricing';
 import { Contact } from './src/sections/CTA';
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Hero />
         <Features />
         <HowItWorks />
+        <Workflow />
         <Testimonials />
         <Pricing />
         <FAQ />

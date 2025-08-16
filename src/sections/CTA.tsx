@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail } from 'react-feather';
 import { useIntersectionFade } from '../hooks/useIntersectionFade';
@@ -69,8 +70,10 @@ export const Contact: React.FC = () => {
               {status === 'submitting' ? 'Sending...' : 'Send Message'}
             </button>
           </div>
-          {status === 'success' && <p className="text-center text-green-400">Message sent! We'll get back to you shortly.</p>}
-          {status === 'error' && <p className="text-center text-red-400">Something went wrong. Please try again.</p>}
+          <div aria-live="polite" className="text-center min-h-[1.5em]">
+            {status === 'success' && <p className="text-green-600">Message sent! We'll get back to you shortly.</p>}
+            {status === 'error' && <p className="text-red-600">Something went wrong. Please try again.</p>}
+          </div>
         </form>
       </div>
     </section>

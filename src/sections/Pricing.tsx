@@ -15,10 +15,17 @@ export const Pricing: React.FC = () => {
         <header className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Flexible plans for every stage</h2>
           <p className="mt-4 text-lg text-text-dim">Start with essentials, and unlock advanced tools as you scale your outreach.</p>
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-border-main bg-surface p-1.5">
-            <button onClick={() => setBillingCycle('monthly')} className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${billingCycle === 'monthly' ? 'bg-primary text-white shadow' : 'text-text-dim hover:text-text-main'}`}>Monthly</button>
-            <button onClick={() => setBillingCycle('yearly')} className={`px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors ${billingCycle === 'yearly' ? 'bg-primary text-white shadow' : 'text-text-dim hover:text-text-main'}`}>Annual <span className="hidden sm:inline-block text-xs font-semibold uppercase bg-primary-accent/20 text-primary-accent px-2 py-0.5 rounded-full">Save ~17%</span></button>
-          </div>
+          <fieldset className="mt-8 inline-flex items-center gap-2 rounded-full border border-border-main bg-surface p-1.5">
+            <legend className="sr-only">Billing cycle</legend>
+            <label className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer ${billingCycle === 'monthly' ? 'bg-primary text-white shadow' : 'text-text-dim hover:text-text-main'}`}>
+              <input type="radio" name="billing-cycle" value="monthly" className="sr-only" checked={billingCycle === 'monthly'} onChange={() => setBillingCycle('monthly')} />
+              Monthly
+            </label>
+            <label className={`relative px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors cursor-pointer ${billingCycle === 'yearly' ? 'bg-primary text-white shadow' : 'text-text-dim hover:text-text-main'}`}>
+              <input type="radio" name="billing-cycle" value="yearly" className="sr-only" checked={billingCycle === 'yearly'} onChange={() => setBillingCycle('yearly')} />
+              Annual <span className="hidden sm:inline-block text-xs font-semibold uppercase bg-primary-accent/20 text-primary-accent px-2 py-0.5 rounded-full">Save ~17%</span>
+            </label>
+          </fieldset>
         </header>
         <div className="grid gap-8 lg:grid-cols-3 items-start">
           {PRICING_PLANS.map(plan => {
@@ -50,7 +57,7 @@ export const Pricing: React.FC = () => {
                   </li>)}
                 </ul>
                 <div className="mt-auto pt-8">
-                  <a href="#" className={`block text-center w-full rounded-lg px-5 py-3 font-semibold tracking-wide transition-transform active:scale-[0.98] ${plan.highlighted ? 'bg-white text-primary hover:bg-gray-100' : 'bg-primary text-white hover:bg-primary-accent'}`}>{plan.cta}</a>
+                  <a href={`https://dashboard.profassist.org/signup?plan=${plan.id}`} className={`block text-center w-full rounded-lg px-5 py-3 font-semibold tracking-wide transition-transform active:scale-[0.98] ${plan.highlighted ? 'bg-white text-primary hover:bg-gray-100' : 'bg-primary text-white hover:bg-primary-accent'}`}>{plan.cta}</a>
                 </div>
               </div>
             );
